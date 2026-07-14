@@ -1,25 +1,28 @@
 package br.com.comprinhas.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 
 public class Compra {
+    @NotBlank
     @Size(min = 5, max = 15)
     private String nomeProduto;
-
-    @Size(min = 10, max = 20)
+    @NotBlank
+    @Size(min = 3, max = 20)
     private String descricao;
-
+    @NotNull
     private BigDecimal valor;
-
+    @NotNull
     private LocalDate dataCompra;
+    @NotBlank
     @Size(min = 5, max = 15)
     private String nomeLoja;
-
+    @NotNull
     private LocalDate dataEntrega;
-
     private String status;
 
 

@@ -9,6 +9,6 @@ public class CompraUseCaseImpl implements CompraUseCase {
     @Override
     public Compra cadastrar(Compra compra) {
         compra.setStatus("Comprado");
-        return null;
+        return compra;
     }
 }
