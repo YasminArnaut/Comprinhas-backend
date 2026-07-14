@@ -1,11 +1,18 @@
 package br.com.comprinhas.model;
 
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "compra")
 public class Compra {
@@ -16,14 +23,12 @@ public class Compra {
 
     private String nomeProduto;
 
-    @Size(min = 10, max = 20)
     private String descricao;
 
     private BigDecimal valor;
 
     private LocalDate dataCompra;
 
-    @Size(min = 5, max = 15)
     private String nomeLoja;
 
     private LocalDate dataEntrega;

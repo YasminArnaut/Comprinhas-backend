@@ -1,8 +1,11 @@
 package br.com.comprinhas.useCase;
-import br.com.comprinhas.dto.Compra;
+import br.com.comprinhas.dto.CompraRequest;
+
+import java.util.List;
 
 public interface CompraUseCase {
-    Compra cadastrar(Compra compra);
+    CompraRequest cadastrar(CompraRequest compraRequest);
+    List<CompraRequest> cadastrarLista(List<CompraRequest> compras);
 
 
 }

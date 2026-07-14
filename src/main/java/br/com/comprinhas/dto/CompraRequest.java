@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 
-public class Compra {
+public class CompraRequest {
     @NotBlank
     @Size(min = 5, max = 15)
     private String nomeProduto;
