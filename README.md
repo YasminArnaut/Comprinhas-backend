@@ -38,7 +38,7 @@ Para que o cadastro seja realizado com sucesso, os seguintes campos devem ser in
 
 ```json
 {
-       "id": 51,
+        "id": 51,
         "nomeProduto": "maquiagem",
         "descricao": "Base liquida",
         "valor": 20.01,
