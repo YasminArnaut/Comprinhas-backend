@@ -8,6 +8,8 @@ import java.time.LocalDate;
 
 
 public class CompraRequest {
+
+    private Long id;
     @NotBlank
     @Size(min = 5, max = 15)
     private String nomeProduto;
@@ -17,6 +19,7 @@ public class CompraRequest {
     @NotNull
     private BigDecimal valor;
     @NotNull
+    @NotNull
     private LocalDate dataCompra;
     @NotBlank
     @Size(min = 5, max = 15)
@@ -25,6 +28,13 @@ public class CompraRequest {
     private LocalDate dataEntrega;
     private String status;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNomeProduto() {
         return nomeProduto;

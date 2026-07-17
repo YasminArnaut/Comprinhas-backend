@@ -29,8 +29,9 @@ public class CompraUseCaseImpl implements CompraUseCase {
         compra.setDataEntrega(request.getDataEntrega());
         compra.setStatus("Comprado");
 
-        repository.save(compra);
+        Compra compraSalva = repository.save(compra);
 
+        request.setId(compraSalva.getId());
         request.setStatus("Comprado");
 
         return request;
@@ -53,17 +54,36 @@ public class CompraUseCaseImpl implements CompraUseCase {
                     compra.setDataEntrega(request.getDataEntrega());
                     compra.setStatus("Comprado");
 
-                    request.setStatus("Comprado");
-
                     return compra;
                 })
                 .toList();
 
-        repository.saveAll(compras);
-        comprasRequest.forEach(request ->
-                request.setStatus("Comprado")
-        );
+        List<Compra> comprasSalvas = repository.saveAll(compras);
+
+        for (int i = 0; i < comprasSalvas.size(); i++) {
+            comprasRequest.get(i).setId(comprasSalvas.get(i).getId());
+            comprasRequest.get(i).setStatus("Comprado");
+        }
 
         return comprasRequest;
     }
+
+    @Override
+    public void deletar(Long id) {
+
+        System.out.println("Tentando remover ID: " + id);
+
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Compra não encontrada");
+        }
+
+        repository.deleteById(id);
+
+        System.out.println("Removido ID: " + id);
+    }
+    @Override
+    public List<Compra> listar() {
+        return repository.findAll();
+    }
+
 }

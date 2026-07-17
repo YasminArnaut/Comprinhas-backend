@@ -2,13 +2,11 @@ package br.com.comprinhas.controller;
 
 import br.com.comprinhas.dto.CompraRequest;
 import br.com.comprinhas.dto.ListaCompraRequest;
+import br.com.comprinhas.model.Compra;
 import br.com.comprinhas.useCase.CompraUseCase;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -34,6 +32,7 @@ public class CompraController {
                 .status(HttpStatus.CREATED)
                 .body(compraCadastrada);
     }
+
     @PostMapping("/lista")
     public ResponseEntity<List<CompraRequest>> cadastrarLista(
             @Valid @RequestBody ListaCompraRequest request) {
@@ -43,5 +42,16 @@ public class CompraController {
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(compras);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deletar(@PathVariable Long id) {
+        compraUseCase.deletar(id);
+        return ResponseEntity.ok("Compra removida com sucesso");
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Compra>> listar() {
+        return ResponseEntity.ok(compraUseCase.listar());
     }
 }
