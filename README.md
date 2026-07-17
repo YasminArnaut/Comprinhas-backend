@@ -38,12 +38,14 @@ Para que o cadastro seja realizado com sucesso, os seguintes campos devem ser in
 
 ```json
 {
-  "nomeCompra": "Notebook Dell Inspiron",
-  "descricao": "Notebook para uso profissional",
-  "valor": 4500.00,
-  "dataPedido": "2026-07-17",
-  "lojaCompra": "Loja Tech",
-  "dataPrevistaEntrega": "2026-07-25"
+       "id": 51,
+        "nomeProduto": "maquiagem",
+        "descricao": "Base liquida",
+        "valor": 20.01,
+        "dataCompra": "2026-01-21",
+        "nomeLoja": "magalu",
+        "dataEntrega": "2026-01-23",
+        "status": "Comprado"
 }
 ```
 
