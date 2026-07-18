@@ -2,9 +2,11 @@
 
 ## Descrição 🧾
 
-Esta funcionalidade permite o cadastro de novas compras na aplicação, possibilitando o acompanhamento e gerenciamento das aquisições realizadas pelos usuários.
+Esta funcionalidade permite que os usuários registrem compras realizadas em plataformas de marketplaces, facilitando o acompanhamento e a organização de pedidos em um único lugar.
 
-A implementação segue a arquitetura da aplicação, utilizando as camadas de **Controller**, **Service** e **Repository** para garantir a separação de responsabilidades e a manutenção das regras de negócio.
+Por meio do cadastro das compras, é possível controlar informações como data da compra, previsão de entrega, proporcionando maior visibilidade sobre as entregas pendentes e o histórico de aquisições fazendo o cadastro.
+
+A implementação foi desenvolvida seguindo a arquitetura da aplicação, utilizando as camadas de Controller, Service e Repository, garantindo a separação de responsabilidades, a centralização das regras de negócio e a manutenção da qualidade e escalabilidade da solução.
 
 ## Fluxo de Funcionamento 💡
 
