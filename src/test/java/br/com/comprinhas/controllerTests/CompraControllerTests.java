@@ -2,7 +2,6 @@ package br.com.comprinhas.controllerTests;
 
 import br.com.comprinhas.controller.CompraController;
 import br.com.comprinhas.dto.CompraRequest;
-import br.com.comprinhas.dto.ListaCompraRequest;
 import br.com.comprinhas.useCase.CompraUseCase;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
