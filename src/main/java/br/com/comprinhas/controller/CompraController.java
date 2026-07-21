@@ -1,6 +1,7 @@
 package br.com.comprinhas.controller;
 
 import br.com.comprinhas.dto.CompraRequest;
+import br.com.comprinhas.dto.CompraUpdateRequest;
 import br.com.comprinhas.useCase.CompraUseCase;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,5 +36,14 @@ public class CompraController {
     public ResponseEntity<String> deletar(@PathVariable Long id) {
         compraUseCase.deletar(id);
         return ResponseEntity.ok("Compra removida com sucesso");
+    }
+    @PatchMapping("/{id}")
+    public ResponseEntity<CompraRequest> atualizar(
+            @PathVariable Long id,
+            @RequestBody CompraUpdateRequest request) {
+
+        CompraRequest compraAtualizada = compraUseCase.atualizar(id, request);
+
+        return ResponseEntity.ok(compraAtualizada);
     }
 }
